@@ -1,5 +1,5 @@
  AOS.init({
- 	duration: 800,
+ 	duration: 0, // duration change for initial load
  	easing: 'slide',
  	once: true
  });
@@ -256,7 +256,7 @@
 			var hash = this.hash;
 			$('html, body').animate({
 				'scrollTop': $(hash).offset().top
-			}, 800, 'swing', function(){
+			}, 0, 'swing', function(){ // this is how we change time to scroll to other pages
 				window.location.hash = hash;
 			});
 
