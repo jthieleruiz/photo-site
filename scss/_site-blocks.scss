@@ -1,12 +1,10 @@
-$primary-text-color: #FFF288;
-$secondary-text-color:#89a;
 .header-bar {
 	float: left;
 	width: 250px;
 	height: 100vh;
 	min-height: 400px;
 	overflow: auto;
-	/* background: $white; */
+	background: $white;
 	background: $global_bg_color;
 	padding: 30px;
 	text-align: left;
@@ -28,15 +26,14 @@ $secondary-text-color:#89a;
 			margin-bottom: 0;
 		}
 		a {
-			font-size: 15px;
-			color: $secondary-text-color;
+			font-size: 20px;
+			color: $black;
 			text-transform: uppercase;
-			font-weight: 400;
-			border-radius: 5px;
+			font-weight: bold;
 
 			display: inline-block;
 			padding: 5px 10px;
-			border: 3px solid $secondary-text-color;
+			border: 4px solid $black;
 		}
 	}
 	.main-menu {
@@ -62,20 +59,19 @@ $secondary-text-color:#89a;
 			a {
 				display: block;
 				padding: 4px 0;
-				color: $secondary-text-color;
+				color: $black;
 				text-transform: uppercase;
 				font-size: .8rem;
-				font-weight: 400;
+				font-weight: 600;
 				position: relative;
 				padding-left: 10px;
 				&:before {
-					/* transition: .3s all ease; */
+					transition: .3s all ease;
 					content: "";
 					position: absolute;
 					left: 0px;
-					top: 6px;
-					width: 3px;
-					height: 20px;
+					top: 0;
+					width: 4px;
 					bottom: 0;
 					background: $primary;
 					opacity: 0;
@@ -83,9 +79,6 @@ $secondary-text-color:#89a;
 				}
 				@include media-breakpoint-down(md) {
 					padding: 4px 10px;
-				}
-				&:hover {
-					color: $primary-text-color;
 				}
 				&.active {
 					color: $primary;
@@ -126,7 +119,6 @@ $secondary-text-color:#89a;
 .main-content {
 	float: right;
 	width: calc(100% - 250px);
-	background: $global_bg_color;
 	@include media-breakpoint-down(md) {
 		width: 100%;
 		position: relative;
@@ -157,7 +149,7 @@ $secondary-text-color:#89a;
 				top: 0;
 				background: rgba($global_bg_color,.9);
 				z-index: 1;
-				/* transition: .3s all ease; */
+				transition: .3s all ease;
 				opacity: 0;
 				visibility: hidden;
 			}
@@ -169,7 +161,7 @@ $secondary-text-color:#89a;
 				width: 100%;
 				transform: translate(-50%, -50%);
 				margin-top: 30px;
-				/* transition: .3s all ease; */
+				transition: .3s all ease;
 				opacity: 0;
 				visibility: hidden;
 				text-align: center;
@@ -195,7 +187,7 @@ $secondary-text-color:#89a;
 				height: 300px;
 				margin-bottom: 0;
 				margin-bottom: $grid-gutter-width;
-				/* transition: .3s all ease; */
+				transition: .3s all ease;
 				transform: scale(1.0);
 				@include media-breakpoint-down(xs) {
 					height: 200px;
@@ -295,7 +287,7 @@ $secondary-text-color:#89a;
 		z-index: 1;
 	}
 	&, .row {
-		height: 100vh;
+		height: 90vh;
 		min-height: 500px;
 		z-index: 2;
 		position: relative;
@@ -316,7 +308,6 @@ $secondary-text-color:#89a;
 
 .site-section {
 	padding: 7em 0;
-	background: $global_bg_color;
 	&.darken-bg {
 		background: lighten($black, 10%);
 		position: relative;
@@ -380,7 +371,7 @@ $secondary-text-color:#89a;
 					height: 7px;
 					border-radius: 50%;
 					background: darken($global_bg_color, 15%);
-					/* transition: .3s all ease; */
+					transition: .3s all ease;
 				}
 				&.active {
 					span {
@@ -414,7 +405,7 @@ $secondary-text-color:#89a;
 			border-radius: 50%;	
 			transform: translateY(-50%);
 			background: darken($global_bg_color, 5%);
-			/* transition: .3s all ease-in-out; */
+			transition: .3s all ease-in-out;
 			
 			line-height: 0;
 			text-align: center;
