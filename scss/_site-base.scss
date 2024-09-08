@@ -1,6 +1,6 @@
 body {
 	line-height: 1.7;
-	color: $black;
+	color: $body-text-color;
 	font-weight: 400;
 	font-size: $font-size-base;
 	background: $white;
@@ -29,7 +29,7 @@ a {
 
 h1, h2, h3, h4, h5,
 .h1, .h2, .h3, .h4, .h5 {
-	color: $black;
+	color: $secondary-text-color;
 }
 
 .border-2 {
@@ -85,6 +85,12 @@ h1, h2, h3, h4, h5,
 	}
 }
 
+.btn-primary {
+	color: $secondary-text-color;
+	background-color: $primary-text-color;
+	border-color: $primary-text-color;
+}
+
 .btn {
 	// text-transform: uppercase;
 	// letter-spacing: .2em;
@@ -127,14 +133,18 @@ h1, h2, h3, h4, h5,
 .form-control {
 	border: none;
 	height: 55px;
-	color: $black;
-	background: rgba(#BF9270, .3);
+	color: $secondary-text-color;
+	background: rgba(#676767, .3);
 	&:active, &:focus {
-		color: $black;
-		background: rgba(#BF9270, .3);
+		color: $white;
+		background: rgba(#cccccc, .3);
 		box-shadow: none;
 		outline: none;
 	}
+}
+
+.form-title {
+	color: $secondary-text-color;
 }
 
 .site-section {

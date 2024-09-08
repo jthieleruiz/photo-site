@@ -183,7 +183,7 @@
 	right: 0;
 	z-index: 2000;
 	padding-top: 20px;
-	background: $white;
+	background: $global_bg_color;
 	height: calc(100vh);
 	
 	transform: translateX(110%);
@@ -274,7 +274,7 @@
 			padding: 10px 20px;
 			display: block;
 			position: relative;
-			color: $gray-900;
+			color: $secondary-text-color;
 			&.active, &:hover {
 				color: $primary;
 			}

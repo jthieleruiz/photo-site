@@ -70,8 +70,14 @@
  				}
  			}
  		})
+		 $('body').on('click', '.js-menu-close', function(e) {
+			 var $this = $(this);
+			 e.preventDefault();
 
- 		$('body').on('click', '.js-menu-toggle', function(e) {
+			 $('body').removeClass('offcanvas-menu');
+			 // $this.removeClass('active');
+		 })
+		 $('body').on('click', '.js-menu-toggle', function(e) {
  			var $this = $(this);
  			e.preventDefault();
 
