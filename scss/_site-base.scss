@@ -86,9 +86,15 @@ h1, h2, h3, h4, h5,
 }
 
 .btn-primary {
-	color: $secondary-text-color;
-	background-color: $primary-text-color;
+	color: $primary-text-color;
+	background-color: rgba(0,0,0,0);
 	border-color: $primary-text-color;
+
+	&:hover {
+		color: $black;
+		background-color: $primary-text-color;
+		border-color: $black;
+	}
 }
 
 .btn {
