@@ -15,6 +15,31 @@
  		observer.observe();	
  	}
  	lozadFunc();
+
+	 var setupFancybox = function() {
+		 console.log("fancy!!")
+		 $(document).ready(function() {
+			 $('[data-fancybox="gallery"]').fancybox({
+				 clickOutside: 'close',
+				 clickSlide: 'close',
+				 touch: {
+					 vertical: true,
+					 momentum: true
+				 },
+				 beforeShow: function() {
+					 // Fix for mobile browsers to ensure touch events are handled correctly
+					 $('.fancybox-container').on('click touchend', function(e) {
+						 console.log("touched");
+						 if (!$(e.target).closest('.fancybox-content').length && !$(e.target).closest('.fancybox-image').length) {
+							 e.preventDefault(); // Prevent default touch behavior
+							 $.fancybox.close(); // Close Fancybox manually
+						 }
+					 });
+				 }
+			 });
+		 });
+	 }
+	 setupFancybox();
  	
 
  	var siteMenuClone = function() {
