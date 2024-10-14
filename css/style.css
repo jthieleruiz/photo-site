@@ -527,7 +527,7 @@ h1, h2, h3, h4, h5,
   z-index: 2000;
   padding-top: 20px;
   background: linear-gradient(-90deg, rgb(22, 23, 24) 0%, rgb(35, 37, 46) 93%);
-  height: 100vh;
+  eight: 100vh;
   transform: translateX(110%);
   box-shadow: -10px 0 20px -10px rgba(0, 0, 0, 0.1);
   transition: 0.3s all ease-in-out;
@@ -930,6 +930,36 @@ h1, h2, h3, h4, h5,
 
 .fancybox-slide--image {
   padding: 3% 0;
+}
+
+.grid {
+  margin: 0 auto;
+}
+.grid .grid-sizer,
+.grid .grid-item {
+  width: 33.3333333333%;
+}
+.grid .grid-item {
+  padding: 5px;
+  box-sizing: border-box;
+}
+.grid .grid-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+@media (max-width: 768px) {
+  .grid .grid-sizer,
+  .grid .grid-item {
+    width: 50%;
+  }
+}
+@media (max-width: 480px) {
+  .grid .grid-sizer,
+  .grid .grid-item {
+    width: 100%;
+  }
 }
 
 .site-mobile-menu .site-mobile-menu-body ul:first-child {

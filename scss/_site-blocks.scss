@@ -89,7 +89,7 @@
 				}
 				&.active {
 					color: $primary;
-					
+
 					&:before {
 						opacity: 1;
 						visibility: visible;
@@ -232,6 +232,65 @@
 	padding: 3% 0;
 }
 
+// Variables for common values
+$grid-padding: 5px; // Adjust the spacing between items
+$columns-desktop: 3;
+$columns-tablet: 2;
+$columns-mobile: 1;
+
+// Mixin for clearfix (no longer needed if not using floats)
+// Remove @mixin clearfix if not using floats
+
+// Function to calculate column width based on the number of columns
+@function column-width($columns) {
+  @return (100% / $columns);
+}
+
+// Masonry Grid Styles
+.grid {
+  margin: 0 auto;
+
+  // Remove clearfix if not using floats
+  // @include clearfix;
+
+  .grid-sizer,
+  .grid-item {
+    width: column-width($columns-desktop); // Default columns for desktop
+  }
+
+  .grid-item {
+    padding: $grid-padding;
+    box-sizing: border-box;
+
+    // Remove float
+    // float: left;
+
+    // Ensure there is no fixed height
+    // height: auto; // Not necessary unless overridden elsewhere
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: contain; // Ensure images are not cropped
+    }
+  }
+
+  // Responsive Adjustments
+  @media (max-width: 768px) {
+    .grid-sizer,
+    .grid-item {
+      width: column-width($columns-tablet); // Columns for tablet
+    }
+  }
+
+  @media (max-width: 480px) {
+    .grid-sizer,
+    .grid-item {
+      width: column-width($columns-mobile); // Columns for mobile
+    }
+  }
+}
 .site-mobile-menu {
 
 	.site-mobile-menu-body {
@@ -247,7 +306,7 @@
 			display: block;
 			position: relative;
 			li {
-				
+
 				&, a {
 					float: none;
 					width: auto;
@@ -428,7 +487,7 @@
 			transform: translateY(-50%);
 			background: darken($global_bg_color, 5%);
 			/* transition: .3s all ease-in-out; */
-			
+
 			line-height: 0;
 			text-align: center;
 			font-size: 25px;
@@ -442,7 +501,7 @@
 				left: 50%;
 				transform: translate(-50%, -50%);
 			}
-			
+
 			&:hover, &:focus {
 				background: rgba($primary, 1);
 				color: $white;

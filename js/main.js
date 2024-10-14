@@ -1,8 +1,15 @@
-AOS.init({
-	duration: 0, // duration change for initial load
-	easing: 'slide',
-	once: true
-});
+
+function aosInit() {
+	console.log("init AOS")
+	AOS.init({
+		duration: 1000, // duration change for initial load
+		easing: 'slide',
+		once: true,
+		// startEvent: 'DOMContentLoaded', // Ensure it starts on page load
+		// debug: true // Enable debug mode
+	});
+}
+aosInit();
 
 jQuery(document).ready(function($) {
 
@@ -41,6 +48,21 @@ jQuery(document).ready(function($) {
 	}
 	setupFancybox();
 
+	$(document).ready(function () {
+		var $grid = $('.grid');
+
+		// Initialize Masonry after images are loaded
+		$grid.imagesLoaded(function () {
+			$grid.masonry({
+				itemSelector: '.grid-item',
+				columnWidth: '.grid-sizer',
+				percentPosition: true,
+			});
+
+			// After Masonry layout is complete, refresh AOS
+			AOS.refresh();
+		});
+	});
 
 	var siteMenuClone = function() {
 
