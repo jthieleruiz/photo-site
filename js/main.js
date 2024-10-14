@@ -2,7 +2,7 @@
 function aosInit() {
 	console.log("init AOS")
 	AOS.init({
-		duration: 1000, // duration change for initial load
+		duration: 200, // duration change for initial load
 		easing: 'slide',
 		once: true,
 		// startEvent: 'DOMContentLoaded', // Ensure it starts on page load
@@ -54,11 +54,12 @@ jQuery(document).ready(function($) {
 		// Initialize Masonry after images are loaded
 		$grid.imagesLoaded(function () {
 			$grid.masonry({
-				itemSelector: '.grid-item',
-				columnWidth: '.grid-sizer',
-				percentPosition: true,
+				itemSelector: '.grid-item',      // Target each grid item
+				columnWidth: '.grid-sizer',      // Set the column width based on the grid-sizer
+				percentPosition: true,           // Use percentage-based positioning
+				fitWidth: true,                  // Ensure the grid fits within the container width
+				gutter: 5                        // Set the gutter to match the spacing between images
 			});
-
 			// After Masonry layout is complete, refresh AOS
 			AOS.refresh();
 		});

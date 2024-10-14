@@ -937,7 +937,7 @@ h1, h2, h3, h4, h5,
 }
 .grid .grid-sizer,
 .grid .grid-item {
-  width: 33.3333333333%;
+  width: 33%;
 }
 .grid .grid-item {
   padding: 5px;
@@ -952,13 +952,13 @@ h1, h2, h3, h4, h5,
 @media (max-width: 768px) {
   .grid .grid-sizer,
   .grid .grid-item {
-    width: 50%;
+    width: 49.5%;
   }
 }
 @media (max-width: 480px) {
   .grid .grid-sizer,
   .grid .grid-item {
-    width: 100%;
+    width: 99%;
   }
 }
 

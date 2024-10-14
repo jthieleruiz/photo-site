@@ -243,7 +243,7 @@ $columns-mobile: 1;
 
 // Function to calculate column width based on the number of columns
 @function column-width($columns) {
-  @return (100% / $columns);
+  @return (99% / $columns );
 }
 
 // Masonry Grid Styles
@@ -291,6 +291,9 @@ $columns-mobile: 1;
     }
   }
 }
+
+
+// Remove any fixed height settings
 .site-mobile-menu {
 
 	.site-mobile-menu-body {
