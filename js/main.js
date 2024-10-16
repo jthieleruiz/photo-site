@@ -57,7 +57,7 @@ jQuery(document).ready(function($) {
 				itemSelector: '.grid-item',      // Target each grid item
 				columnWidth: '.grid-sizer',      // Set the column width based on the grid-sizer
 				percentPosition: true,           // Use percentage-based positioning
-				fitWidth: true,                  // Ensure the grid fits within the container width
+				fitWidth: false,                  // Ensure the grid fits within the container width
 				gutter: 5                        // Set the gutter to match the spacing between images
 			});
 			// After Masonry layout is complete, refresh AOS
