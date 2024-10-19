@@ -27,17 +27,31 @@ jQuery(document).ready(function($) {
 		console.log("fancy!!")
 		$(document).ready(function() {
 			$('[data-fancybox="gallery"]').fancybox({
+				margin: [50, 50],
 				clickOutside: 'close',
-				clickSlide: 'close',
-				touch: {
-					vertical: true,
-					momentum: true
+				// touch: {
+				// 	vertical: true,
+				// 	momentum: true
+				// },
+				width: 'auto',
+				// height: 'auto',
+				fitToView: false, // Allow the content to exceed the viewport dimensions
+				autoSize: false,   // Automatically size Fancybox based on content
+				aspectRatio: true, // Maintain aspect ratio of content (especially for images)
+				afterLoad: function(instance, current) {
+					$(current.$content).find('.fancybox-image').css({
+						'width': '96%',        // Image takes full width of content
+						'height': 'auto',      // Maintain aspect ratio
+					'margin-left': '1.5%',
+					});
 				},
-				beforeShow: function() {
+				beforeShow: function(instance, current) {
 					// Fix for mobile browsers to ensure touch events are handled correctly
 					$('.fancybox-container').on('click touchend', function(e) {
 						console.log("touched");
-						if (!$(e.target).closest('.fancybox-content').length && !$(e.target).closest('.fancybox-image').length) {
+						if (!$(e.target).closest('.fancybox-content').length && 
+							!$(e.target).closest('.fancybox-image').length && 
+							!$(e.target).closest('.fancybox-navigation').length) {
 							e.preventDefault(); // Prevent default touch behavior
 							$.fancybox.close(); // Close Fancybox manually
 						}
@@ -57,7 +71,7 @@ jQuery(document).ready(function($) {
 				itemSelector: '.grid-item',      // Target each grid item
 				columnWidth: '.grid-sizer',      // Set the column width based on the grid-sizer
 				percentPosition: true,           // Use percentage-based positioning
-				fitWidth: false,                  // Ensure the grid fits within the container width
+				fitWidth: true,                  // Ensure the grid fits within the container width
 				gutter: 5                        // Set the gutter to match the spacing between images
 			});
 			// After Masonry layout is complete, refresh AOS
