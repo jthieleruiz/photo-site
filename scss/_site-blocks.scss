@@ -270,52 +270,52 @@ $columns-mobile: 1;
 
 // Masonry Grid Styles
 .grid {
-  margin: 0 auto;
+	margin: 0 auto;
 
-  // Remove clearfix if not using floats
-  // @include clearfix;
+	// Remove clearfix if not using floats
+	// @include clearfix;
 
-  .grid-sizer,
-  .grid-item {
-    width: column-width($columns-desktop); // Default columns for desktop
-  }
-
-  .grid-item {
-    padding: $grid-padding;
-    box-sizing: border-box;
-
-	a {
-		width: 100%;
+	.grid-sizer,
+	.grid-item {
+		width: column-width($columns-desktop); // Default columns for desktop
 	}
 
-    // Remove float
-    // float: left;
+	.grid-item {
+		padding: $grid-padding;
+		box-sizing: border-box;
 
-    // Ensure there is no fixed height
-    // height: auto; // Not necessary unless overridden elsewhere
+		a {
+			width: 100%;
+		}
 
-    img {
-      display: block;
-      width: 100%;
-      height: auto;
-      object-fit: contain; // Ensure images are not cropped
-    }
-  }
+		// Remove float
+		// float: left;
 
-  // Responsive Adjustments
-  @media (max-width: 1200px) {
-    .grid-sizer,
-    .grid-item {
-      width: column-width($columns-tablet); // Columns for tablet
-    }
-  }
+		// Ensure there is no fixed height
+		// height: auto; // Not necessary unless overridden elsewhere
 
-  @media (max-width: 480px) {
-    .grid-sizer,
-    .grid-item {
-      width: column-width($columns-mobile); // Columns for mobile
-    }
-  }
+		img {
+			display: block;
+			width: 100%;
+			height: auto;
+			object-fit: contain; // Ensure images are not cropped
+		}
+	}
+
+	// Responsive Adjustments
+	@media (max-width: 1200px) {
+		.grid-sizer,
+		.grid-item {
+			width: column-width($columns-tablet); // Columns for tablet
+		}
+	}
+
+	@media (max-width: 480px) {
+		.grid-sizer,
+		.grid-item {
+			width: column-width($columns-mobile); // Columns for mobile
+		}
+	}
 }
 
 

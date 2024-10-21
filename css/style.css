@@ -920,23 +920,38 @@ h1, h2, h3, h4, h5,
   visibility: visible;
 }
 
+@media (max-width: 991.98px) {
+  .anchor {
+    top: -80px;
+    position: relative;
+  }
+}
+
 .fancybox-image {
-  /* margin: 3rem; */
   border: clamp(1px, 0.3vw, 5px) solid #ddd;
   border-radius: 2px;
 }
 
 .fancybox-caption {
-  padding: 1% 44px !important;
-  line-height: 0.5;
+  padding: 10px 44px !important;
+  /* line-height: 0.5; */
+  /* &:after { */
+  /* } */
 }
-.fancybox-caption:after {
-  /* display: none; */
-  /* width: 50px; */
+
+.fancybox-stage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .fancybox-slide--image {
   padding: 3% 0;
+}
+
+.fancybox-content {
+  max-width: 98vw; /* 98% of the viewport width */
+  width: 98vw; /* Ensure the width is 98% of the viewport */
 }
 
 .grid {
