@@ -220,6 +220,13 @@
 	}
 }
 
+.anchor {
+	@include media-breakpoint-down(md) {
+		top: -80px;
+		position: relative;
+	}
+}
+
 .fancybox-image {
 	border: clamp(1px, 0.3vw, 5px) solid #ddd;
 	border-radius: 2px;
