@@ -23,7 +23,7 @@ html {
 }
 
 a {
-  transition: 0.3s all ease;
+  /* transition: .3s all ease; */
   position: relative;
   display: inline-block;
 }
@@ -59,7 +59,7 @@ h1, h2, h3, h4, h5,
 
 .site-wrap:before {
   display: none;
-  transition: 0.3s all ease-in-out;
+  /* transition: .3s all ease-in-out; */
   background: rgba(0, 0, 0, 0.6);
   content: "";
   position: absolute;
@@ -899,7 +899,7 @@ h1, h2, h3, h4, h5,
   height: 300px;
   margin-bottom: 0;
   margin-bottom: 5px;
-  transition: 0.3s all ease;
+  /* transition: .3s all ease; */
   transform: scale(1);
 }
 @media (max-width: 575.98px) {
@@ -930,6 +930,9 @@ h1, h2, h3, h4, h5,
 .fancybox-image {
   border: clamp(1px, 0.3vw, 5px) solid #ddd;
   border-radius: 2px;
+  width: 96%;
+  height: auto;
+  margin-left: 2%;
 }
 
 .fancybox-caption {
