@@ -196,7 +196,7 @@
 				height: 300px;
 				margin-bottom: 0;
 				margin-bottom: $grid-gutter-width;
-				transition: .3s all ease;
+				/* transition: .3s all ease; */
 				transform: scale(1.0);
 				@include media-breakpoint-down(xs) {
 					height: 200px;
@@ -230,6 +230,9 @@
 .fancybox-image {
 	border: clamp(1px, 0.3vw, 5px) solid #ddd;
 	border-radius: 2px;
+	width: 96%;       // Image takes full width of content
+	height: auto;      // Maintain aspect ratio
+	margin-left: 2%;
 }
 
 .fancybox-caption {

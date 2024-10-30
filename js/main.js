@@ -27,8 +27,8 @@ jQuery(document).ready(function($) {
 		console.log("fancy!!")
 		$(document).ready(function() {
 			$('[data-fancybox="gallery"]').fancybox({
-				margin: [50, 50],
-				clickOutside: 'close',
+				// margin: [50, 50],
+				// clickOutside: 'close',
 				// touch: {
 				// 	vertical: true,
 				// 	momentum: true
@@ -39,11 +39,11 @@ jQuery(document).ready(function($) {
 				autoSize: false,   // Automatically size Fancybox based on content
 				aspectRatio: true, // Maintain aspect ratio of content (especially for images)
 				afterLoad: function(instance, current) {
-					$(current.$content).find('.fancybox-image').css({
-						'width': '96%',        // Image takes full width of content
-						'height': 'auto',      // Maintain aspect ratio
-					'margin-left': '1.5%',
-					});
+					// $(current.$content).find('.fancybox-image').css({
+					// 	'width': '96%',        // Image takes full width of content
+					// 	'height': 'auto',      // Maintain aspect ratio
+					// 'margin-left': '2%',
+					// });
 				},
 				beforeShow: function(instance, current) {
 					// Fix for mobile browsers to ensure touch events are handled correctly
@@ -70,12 +70,12 @@ jQuery(document).ready(function($) {
 			$grid.masonry({
 				itemSelector: '.grid-item',      // Target each grid item
 				columnWidth: '.grid-sizer',      // Set the column width based on the grid-sizer
-				percentPosition: true,           // Use percentage-based positioning
-				fitWidth: true,                  // Ensure the grid fits within the container width
+				// percentPosition: true,           // Use percentage-based positioning
+				// fitWidth: true,                  // Ensure the grid fits within the container width
 				gutter: 5                        // Set the gutter to match the spacing between images
 			});
 			// After Masonry layout is complete, refresh AOS
-			AOS.refresh();
+			// AOS.refresh();
 		});
 	});
 
@@ -154,9 +154,15 @@ jQuery(document).ready(function($) {
 
 		// click outisde offcanvas
 		$(document).mouseup(function(e) {
+			console.log(e);
 			var container = $(".site-mobile-menu");
+			console.log(container);
+
+			// Check if the clicked element is outside the container
 			if (!container.is(e.target) && container.has(e.target).length === 0) {
-				if ( $('body').hasClass('offcanvas-menu') ) {
+
+				// If the body has the 'offcanvas-menu' class (menu is open), close it
+				if ($('body').hasClass('offcanvas-menu')) {
 					$('body').removeClass('offcanvas-menu');
 				}
 			}
